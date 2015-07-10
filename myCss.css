@@ -1,0 +1,45 @@
+.tab {
+	width: 49.5%;
+	float: left;
+	border: 1px solid;
+	text-align: center;
+	padding-top: 10px;
+}
+.container {
+	height: 60px;
+	width: 100%;
+	background: #a9f5a9;
+	overflow: auto;
+}
+.toggle, input {
+	float: left;
+	margin: 5px 2%;
+}
+input {
+	width: 30%;
+}
+.item {
+	background: #eee;
+	margin: 5px 120px;
+	width: 250px;
+}
+.item2 {
+	background: #eee;
+	margin: 5px 120px;
+	width: 300px;
+	height: 70px;
+}
+p {
+	margin: 0px;
+}
+img {
+	float: left;
+	height: 70px;
+	width: 70px;
+}
+.closeBtn {
+	width: 25px;
+	float: right;
+	color: red;
+	font-family: sans-serif;
+}

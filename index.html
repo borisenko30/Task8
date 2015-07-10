@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Task8</title>
+		<link rel='stylesheet' href='myCss.css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	</head>
+	
+	<body ng-app='myApp'>
+		
+		<div class="tab" ng-controller='goodsController'>
+			
+			<div class="container">
+				<button class="toggle" ng-click='visible=!visible'>ToggleGoods</button>
+				<input type="text" placeholder="Input name and press 'Enter'" ng-keyup='addItem($event);' ng-model='text'/>
+				<input type="text" placeholder="Input filter" ng-model='name'/>
+			</div>
+		
+			<div class="item" ng-repeat='item in goods | filter:name track by $index' ng-show='visible'>
+				{{item.name + ': '}}
+				{{item.price | currency}}
+				<span class='closeBtn' ng-click='deleteItem($index)'>X</span>
+			</div>
+			
+			<div class="item" style='color: blue'>
+				Total quantity: {{goods.length}}
+			</div>
+			
+		</div>
+		
+		<div class="tab" ng-controller='buyersController'>
+			
+			<div class="container">
+				<button class="toggle" ng-click='visible=!visible'>ToggleBuyers</button>
+				<input type="text" placeholder="Input name and press 'Enter'" ng-keyup='addItem($event);' ng-model='text'/>
+				<input type="text" placeholder="Input filter" ng-model='input.name'/>
+			</div>
+			
+			<div class="item2" ng-repeat='item in buyers | filter:input track by $index' ng-show='visible'>
+				
+				<p><img ng-src='{{item.ava}}' alt='avatar'/>Пользователь: {{item.name | uppercase}}
+					<span class='closeBtn' ng-click='deleteItem($index)'>X</span>
+				</p>
+				<p>возраст: {{item.age}}</p>
+				<p>город: {{item.city}}</p>
+				
+			</div>
+			
+			<div class="item2" style='height: auto; color: blue'>
+				Total quantity: {{buyers.length}}
+			</div>
+			
+		</div>
+		
+	</body>
+	
+	<script src="Task8.js"></script>
+</html>
